@@ -236,3 +236,29 @@ img{max-width:100%;height:auto;border-radius:10px;box-shadow:var(--shadow-1)}
     margin-top:2px;
   }
 }
+
+/* --- Mobile header layout fix --- */
+@media (max-width: 700px){
+  .brand{
+    display:grid;                 /* switch flex -> grid on phones */
+    grid-template-columns: 1fr auto;   /* text left, photo right */
+    grid-template-areas:
+      "info photo"
+      "contact contact";
+    align-items:start;
+    gap:10px 14px;
+    padding:10px 0;               /* tighten vertical space */
+  }
+  .brand-info{ grid-area: info; }
+  .headshot{ 
+    grid-area: photo; 
+    justify-self:end; 
+    width:95px;                   /* smaller on mobile */
+    margin-top:0;                 /* remove extra offset */
+  }
+  .contact{
+    grid-area: contact;
+    text-align:left;              /* stop right alignment on mobile */
+    margin-top:6px;
+  }
+}
