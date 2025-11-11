@@ -1,0 +1,266 @@
+/* === Clifford B. Fedler — Academic Portfolio (2025 Refresh) ==================
+   Design goals:
+   - Scholarly + modern: serif body, clean sans for UI
+   - System-aware dark mode, soft glass cards, subtle gradients
+   - Readability for long bibliographies (timeline list styling)
+   - Zero HTML changes required (works with existing structure)
+   ========================================================================== */
+
+/* Fonts (fast, variable) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap');
+
+:root{
+  /* Light theme */
+  --bg: #fbfbfd;
+  --bg-soft: #f3f5f9;
+  --surface: #ffffff;
+  --ink: #111218;
+  --ink-soft: #5a5f6a;
+  --muted: #717684;
+  --line: #e7e8ee;
+
+  /* Brand + accents (TTU-adjacent cool academic) */
+  --brand: #0c2340;          /* deep indigo */
+  --brand-2: #2155cd;        /* cobalt accent */
+  --brand-weak: #e8eefc;
+
+  /* Effects */
+  --shadow-1: 0 6px 20px rgba(16,22,34,.08);
+  --shadow-2: 0 10px 30px rgba(16,22,34,.12);
+  --radius: 14px;
+
+  /* Typography */
+  --font-ui: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-body: "Source Serif 4", Georgia, "Times New Roman", Times, serif;
+  --size: 17.5px;
+  --lh: 1.65;
+
+  /* Layout */
+  --max: 1120px;
+  --gutter: 22px;
+
+  /* Fancy list timeline */
+  --dot: radial-gradient(circle at 10px 11px, var(--brand-2) 0 6px, transparent 7px);
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0c0e13;
+    --bg-soft: #11141a;
+    --surface: #121621;
+    --ink: #f2f3f5;
+    --ink-soft: #c3c7d1;
+    --muted: #9aa1ad;
+    --line: #262c39;
+    --brand: #99b2ff;
+    --brand-2: #79a1ff;
+    --brand-weak: #1a2235;
+    --shadow-1: 0 8px 26px rgba(0,0,0,.35);
+    --shadow-2: 0 14px 40px rgba(0,0,0,.5);
+    --dot: radial-gradient(circle at 10px 11px, var(--brand-2) 0 6px, transparent 7px);
+  }
+}
+
+/* Base */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;padding:0}
+body{
+  font-family: var(--font-body);
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(33,85,205,.06), transparent 60%),
+    radial-gradient(1000px 500px at 110% -20%, rgba(12,35,64,.08), transparent 55%),
+    var(--bg);
+  line-height:var(--lh);
+  font-size:var(--size);
+  text-rendering:optimizeLegibility;
+}
+
+/* Links */
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus{outline:2px solid var(--brand-2);outline-offset:3px;border-radius:6px}
+
+/* Containers */
+.container{max-width:var(--max);margin:0 auto;padding:0 var(--gutter)}
+
+/* Header (glassy) */
+.site-header{
+  position:sticky; top:0; z-index:1000;
+  backdrop-filter: saturate(140%) blur(8px);
+  background: linear-gradient(to right, rgba(255,255,255,.75), rgba(255,255,255,.75));
+  border-bottom:1px solid var(--line);
+}
+@media (prefers-color-scheme: dark){
+  .site-header{
+    background: linear-gradient(to right, rgba(18,22,33,.7), rgba(18,22,33,.7));
+  }
+}
+.brand{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:1.25rem;
+  padding:16px 0 14px 0;
+}
+.brand h1{
+  font-family: var(--font-ui);
+  font-weight:800; letter-spacing:.2px;
+  margin:0 0 6px 0; line-height:1.15; font-size:28px;
+}
+.brand .role, .brand .affil{
+  margin:2px 0; font-family:var(--font-ui); color:var(--ink-soft); font-size:15.5px
+}
+.contact{list-style:none;margin:0;padding:0;text-align:right;font-family:var(--font-ui)}
+.contact li{white-space:nowrap;margin:2px 0}
+.contact a{font-weight:600}
+
+/* Navbar — pill tabs with subtle gradient */
+.navbar{
+  position:sticky; top:68px; z-index:999;
+  backdrop-filter: saturate(150%) blur(8px);
+  background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.6));
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)
+}
+@media (prefers-color-scheme: dark){
+  .navbar{background: linear-gradient(180deg, rgba(18,22,33,.7), rgba(18,22,33,.55));}
+}
+.navbar .container{
+  display:flex;flex-wrap:wrap;gap:10px;padding:10px var(--gutter)
+}
+.navbar a{
+  --pad:10px 14px;
+  display:inline-block;padding:var(--pad);
+  border:1px solid var(--line);
+  border-radius:999px;
+  background: linear-gradient(to bottom, var(--surface), var(--bg-soft));
+  font:600 14px var(--font-ui);
+  box-shadow: var(--shadow-1);
+  transition: transform .12s ease, box-shadow .12s ease, border-color .2s ease;
+}
+.navbar a:hover{transform:translateY(-1px);box-shadow:var(--shadow-2)}
+.navbar a[aria-current="page"]{
+  border-color: var(--brand-2);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-2) 18%, transparent);
+}
+
+/* Main */
+main{padding:26px 0}
+.split{
+  display:grid;grid-template-columns: minmax(0,2fr) minmax(240px,1fr);gap:26px
+}
+@media (max-width: 980px){.split{grid-template-columns:1fr}}
+aside{position:sticky; top:132px; height:fit-content}
+aside .badge{margin-top:8px}
+
+/* Headings with anchors */
+h2,h3{scroll-margin-top:120px}
+h2{
+  font-family:var(--font-ui);
+  margin:26px 0 12px;
+  font-weight:800; letter-spacing:.2px;
+  border-bottom:0;
+  position:relative;
+}
+h2::after{
+  content:"";
+  display:block;height:3px;width:64px;border-radius:6px;
+  background: linear-gradient(90deg, var(--brand-2), color-mix(in srgb, var(--brand-2) 40%, transparent));
+  margin-top:6px
+}
+h3{
+  font-family:var(--font-ui);font-weight:700;margin:18px 0 8px;color:var(--brand)
+}
+
+/* Lead intro panel */
+.lead{
+  background: linear-gradient(180deg, var(--surface), var(--bg-soft));
+  border:1px solid var(--line);
+  border-left:6px solid var(--brand-2);
+  border-radius:var(--radius);
+  padding:16px 18px;margin:12px 0 22px;
+  box-shadow: var(--shadow-1);
+}
+
+/* Cards */
+.section-card{
+  background: linear-gradient(180deg, var(--surface), var(--bg-soft));
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow: var(--shadow-1);
+}
+
+/* Lists — “timeline” style for dense academic entries */
+ul.compact{
+  margin:10px 0 18px;
+  padding-left:28px;
+  list-style:none;
+  border-left:2px solid color-mix(in srgb, var(--brand-2) 25%, var(--line));
+}
+ul.compact li{
+  margin:10px 0; padding-left:16px; position:relative;
+}
+ul.compact li::before{
+  content:"";
+  position:absolute; left:-11px; top:6px; width:14px; height:14px;
+  border-radius:50%;
+  background: var(--brand-2);
+  box-shadow:0 0 0 3px color-mix(in srgb, var(--brand-2) 20%, transparent);
+}
+ul.tight{margin:4px 0 12px;padding-left:22px}
+ul.tight li{margin:4px 0}
+
+/* Small utilities */
+.note{color:var(--muted);font-size:15px;margin:6px 0;font-family:var(--font-ui)}
+.badge{
+  display:inline-block;
+  background: linear-gradient(180deg, var(--brand-weak), #fff0);
+  color: color-mix(in srgb, var(--brand) 85%, var(--ink));
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:4px 10px;
+  font:700 12.5px var(--font-ui);
+}
+
+/* Footer */
+.site-footer{
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  text-align:center;
+  padding:18px 0;
+  margin-top:30px;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,.02));
+}
+
+/* Images (if any added later) */
+img{max-width:100%;height:auto;border-radius:10px;box-shadow:var(--shadow-1)}
+
+/* Selection + target highlight */
+::selection{background: color-mix(in srgb, var(--brand-2) 25%, transparent)}
+:target{animation: focusPulse .8s ease}
+@keyframes focusPulse{
+  from{box-shadow:0 0 0 6px color-mix(in srgb, var(--brand-2) 20%, transparent)}
+  to{box-shadow:none}
+}
+
+/* Print (clean CV printouts) */
+@media print{
+  .site-header, .navbar, .site-footer{display:none !important}
+  body{background:#fff;color:#000}
+  a{text-decoration:none;color:#000}
+  main{padding:0}
+  ul.compact{border-left:0}
+  ul.compact li::before{display:none}
+}
+
+/* Headshot styling */
+.headshot{
+  width:130px;
+  height:auto;
+  border-radius:50%;
+  box-shadow: var(--shadow-1);
+  object-fit:cover;
+}
+@media (max-width: 700px){
+  .headshot{width:100px;margin-top:6px}
+}

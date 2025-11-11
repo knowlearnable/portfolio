@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Clifford B. Fedler, Ph.D., P.E. — Academic Portfolio</title>
+  <meta name="description" content="Academic portfolio and leadership profile." />
+  
+  <script>
+  try {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.write('<link id="theme-style" rel="stylesheet" href="dark_mode.css">');
+    }
+  } catch(e){}
+</script>
+  
+  <link id="theme-style" rel="stylesheet" href="light_mode.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container brand">
+    <div>
+      <h1>Clifford B. Fedler, Ph.D., P.E.</h1>
+	  <p class="role">Associate Vice Provost, Office of International Affairs</p>
+      <p class="role">Professor, Department of Civil, Environmental and Construction Engineering</p>
+      <p class="affil">Texas Tech University • Lubbock, Texas 79409-1023</p>
+    </div>
+	
+	<img src="fedler_headshot.jpg" alt="Clifford B. Fedler" class="headshot" loading="lazy" />
+	
+    <ul class="contact">
+      <li><strong>Email:</strong> <a href="mailto:clifford.fedler@ttu.edu">clifford.fedler@ttu.edu</a></li>
+      <li><strong>Phone:</strong> (806) 834-3964</li>
+      <li><strong>Fax:</strong> (806) 742-1749</li>
+    </ul>
+  </div>
+</header>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" aria-current="page">Overview</a>
+    <a href="publications.html">Publications</a>
+    <a href="advising.html">Advising</a>
+    <a href="grants.html">Grants & Development</a>
+    <a href="service.html">Service & Honors</a>
+    <a href="activities.html">Talks & Activities</a>
+	
+	<a href="#" id="theme-toggle" role="button" aria-pressed="false"
+       title="Toggle dark mode">🌙 Dark</a>
+	
+  </div>
+</nav>
+
+<main class="container">
+  <div class="split">
+    <section>
+      <h2>About</h2>
+      <div class="lead">
+        Senior academic leader focused on natural wastewater treatment and reuse (Pond-in-Pond systems; land application),
+        nutrient fate and transport, wetlands and nature-based treatment, environmental and hydrologic systems modeling,
+        and sustainable water systems for arid and semiarid regions. Extensive experience in graduate education leadership and international engagement.
+      </div>
+
+      <h2>Education</h2>
+      <ul class="compact">
+        <li>Doctor of Philosophy, Agricultural Engineering — University of Illinois at Urbana-Champaign (October 1985)</li>
+        <li>Master of Science, Agricultural Engineering — Iowa State University (May 1981)</li>
+        <li>Master of Science, Civil Engineering — Iowa State University (May 1981)</li>
+        <li>Bachelor of Science, Agricultural Engineering — Iowa State University (May 1979)</li>
+      </ul>
+
+      <h2>Academic Appointments</h2>
+      <ul class="compact">
+        <li>Associate Vice Provost, Office of International Affairs, Texas Tech University (September 2024–present)</li>
+        <li>Professor, Department of Civil, Environmental and Construction Engineering, Texas Tech University (September 1997–present)</li>
+        <li>Senior Associate Dean, Graduate School, Texas Tech University (September 2014–January 2016)</li>
+        <li>Associate Dean, Graduate School, Texas Tech University (September 2004–2014)</li>
+        <li>Director, International Center for Arid and Semiarid Land Studies, Texas Tech University (August 2001–May 2003)</li>
+        <li>Associate Professor, Department of Civil Engineering, Texas Tech University (September 1991–September 1997)</li>
+        <li>Associate Chair, Department of Agricultural Engineering, Texas Tech University (September 1990–September 1991)</li>
+        <li>Assistant Professor, Department of Agricultural Engineering, Texas Tech University (July 1985–August 1990)</li>
+      </ul>
+
+      <h2>Research Areas</h2>
+      <div class="section-card">
+        <ul class="compact">
+          <li>Water reuse and land-application systems</li>
+          <li>Pond-in-Pond wastewater treatment systems</li>
+          <li>Wetlands and other nature-based treatment systems</li>
+          <li>Environmental and hydrologic systems modeling</li>
+          <li>Fate and transport of contaminants and nutrients</li>
+          <li>Sustainable design in arid and semiarid regions</li>
+        </ul>
+      </div>
+
+      <h2>Credentials</h2>
+      <ul class="compact">
+        <li>Fellow, American Society of Agricultural and Biological Engineers</li>
+        <li>Board Certified Environmental Engineer</li>
+        <li>Licensed Professional Engineer (Texas)</li>
+      </ul>
+    </section>
+
+    <aside>
+      <h3>Quick Links</h3>
+      <ul class="compact">
+        <li><a href="publications.html">Refereed Publications</a></li>
+        <li><a href="advising.html">Graduate Advising</a></li>
+        <li><a href="grants.html">Research Grants & Development</a></li>
+        <li><a href="service.html">Service, Honors, Consulting</a></li>
+        <li><a href="activities.html">Invited Presentations & Activities</a></li>
+      </ul>
+
+      <h3>Representative Recent Papers</h3>
+      <ul class="compact">
+        <li>Silva Junior; Costa; Fedler — Sustainability (2024)</li>
+        <li>Soares da Silva; Fedler — Journal of Water Process Engineering (2022/2023)</li>
+        <li>Fedler — Water (2021)</li>
+      </ul>
+
+      <span class="badge">Print-friendly</span>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">© <span id="year"></span> Clifford B. Fedler</div>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+  (function () {
+    var LINK_ID = 'theme-style';
+    var LS_KEY  = 'theme';
+    var linkEl  = document.getElementById(LINK_ID);
+    var toggle  = document.getElementById('theme-toggle');
+
+    // 1) default to light; 2) apply saved preference if any
+    var saved = localStorage.getItem(LS_KEY);
+    if (saved === 'dark') {
+      linkEl.href = 'dark_mode.css';
+      if (toggle) { toggle.textContent = '☀️ Light'; toggle.setAttribute('aria-pressed', 'true'); }
+    } else {
+      linkEl.href = 'light_mode.css';
+      if (toggle) { toggle.textContent = '🌙 Dark'; toggle.setAttribute('aria-pressed', 'false'); }
+    }
+
+    // toggle handler
+    function swapTheme(e){
+      if (e) e.preventDefault();
+      var isDark = linkEl.href.indexOf('dark_mode.css') !== -1;
+      if (isDark) {
+        linkEl.href = 'light_mode.css';
+        localStorage.setItem(LS_KEY, 'light');
+        if (toggle) { toggle.textContent = '🌙 Dark'; toggle.setAttribute('aria-pressed', 'false'); }
+      } else {
+        linkEl.href = 'dark_mode.css';
+        localStorage.setItem(LS_KEY, 'dark');
+        if (toggle) { toggle.textContent = '☀️ Light'; toggle.setAttribute('aria-pressed', 'true'); }
+      }
+    }
+
+    if (toggle) toggle.addEventListener('click', swapTheme);
+  })();
+
+</script>
+</body>
+</html>

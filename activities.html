@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Talks & Activities — Clifford B. Fedler</title>
+  
+    <script>
+  try {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.write('<link id="theme-style" rel="stylesheet" href="dark_mode.css">');
+    }
+  } catch(e){}
+</script>
+  
+  <link id="theme-style" rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="container brand">
+    <div>
+      <h1>Invited Presentations & Activities</h1>
+      <p class="role">Invited Talks • Other Professional Activities • Cooperative & Civic Activities • Student Organizations</p>
+    </div>
+    <ul class="contact"><li><a href="index.html">← Back to Overview</a></li></ul>
+  </div>
+</header>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html">Overview</a>
+    <a href="publications.html">Publications</a>
+    <a href="advising.html">Advising</a>
+    <a href="grants.html">Grants & Development</a>
+    <a href="service.html">Service & Honors</a>
+    <a href="activities.html" aria-current="page">Talks & Activities</a>
+	
+	<a href="#" id="theme-toggle" role="button" aria-pressed="false"
+       title="Toggle dark mode">🌙 Dark</a>
+	
+  </div>
+</nav>
+
+<main class="container">
+  <h2>Invited Presentations</h2>
+  <ul class="compact">
+    <li>Global water stewardship — Brazilian perspective — Centro Universitario das Cataratas (Foz de Iguaçu) (June 2019)</li>
+    <li>Research education: building interdisciplinary integrated technology teams — Jimma Institute of Technology, Jimma University (February 2019)</li>
+    <li>Global water stewardship — Ethiopian perspective — Jimma Institute of Technology (February 2019)</li>
+    <li>Global water stewardship for Texas, the United States, and globally — Osher Lifelong Learning Institute, Texas Tech University, Fredericksburg, Texas (February 2019)</li>
+    <li>Integrated technologies for wastewater treatment — applications in Brazil — Centro Universitario das Cataratas (June 2018)</li>
+    <li>Global water stewardship for Texas and the United States — Osher Lifelong Learning Institute, Texas Tech University (April 2018)</li>
+    <li>Integrating technologies for recycling water and biomass — Tianjin Agricultural University; additional talks to students and faculty; Tianjin Agricultural Research Institute and Tianjin Environmental Institute (June 2014)</li>
+    <li>Alternative feedstocks for the biodiesel process — International Oil Mill Superintendents Association Convention, Nashville, Tennessee (June 21, 2011)</li>
+    <li>Utilization of biomass for energy — Corporate Integration of Renewable Energy Conference, San Antonio, Texas (February 1–2, 2010)</li>
+    <li>Keynote speaker — IDEAS Conference, Pittsburg State University (March 12–13, 2008)</li>
+    <li>Onsite wastewater treatment — Bayou Preservation Association (October 21, 2008)</li>
+    <li>Integrated wastewater treatment and sustainable economic development — Colorado Energy and Sustainability Fair, Crestone, Colorado (August 30, 2008)</li>
+    <li>Integration of gasification for processing animal residuals — Water Environment Federation (November 2–4, 2003)</li>
+    <li>Improving nitrogen removal in constructed wetlands for animal waste treatment — USDA-NRCS Workshop on Wetlands (June 16–19, 2003)</li>
+    <li>Multiple radio and TV interviews regarding water recycling and integrated facultative ponds (2003–1997)</li>
+  </ul>
+
+  <h2>Other Professional Activities</h2>
+  <ul class="compact">
+    <li>External examiner — Doctor of Philosophy defenses, Jimma Institute of Technology, Jimma University (May 2020; multiple candidates)</li>
+    <li>Invited technical visits and cooperative program development — Peru (Huancayo, 2001; 2014); China (Tianjin, 2014); Turkey (Ankara, 2003); Australia (Sydney, Dubbo, 1997, 1999); Jordan (Irbid, 1991); Mexico (Tepatitlán, 1998)</li>
+    <li>Rule Revision Committee — Texas Natural Resource Conservation Commission — natural wastewater treatment system guidelines (1995)</li>
+    <li>Engineers Without Borders — Naso Village (Solong), Panama — water treatment design; floating debris system (2009, 2014, 2018)</li>
+    <li>Hosted research exchange — Kazan State Agro University (2008)</li>
+  </ul>
+
+  <h2>Cooperative & Civic Activities</h2>
+  <ul class="compact">
+    <li>Founding Board Member — The Renewable Energy Institute (501c3), Austin, Texas (2007–2014)</li>
+    <li>Board Member — American Air Scrubbers, Inc. (2005–2016); General Steel Warehouse, Inc. (2004–present); Global Scientific, Inc. (2002–present)</li>
+    <li>Lubbock Lions Club — Member (1992–present), multiple leadership roles including President (2011–2012)</li>
+    <li>Odyssey of the Mind — Judge and leadership roles (1990–1996; World Competition Judge 1994)</li>
+    <li>Salvation Army disaster volunteer (1993–present)</li>
+    <li>Lubbock Food Bank Dehydration Facility — waste treatment system design (volunteer, 1992–1994)</li>
+    <li>Habitat for Humanity — volunteer (1993–present)</li>
+    <li>United Way of Lubbock — Departmental Campaign Chair (1985–1987)</li>
+    <li>Lubbock Arts Festival volunteer (1986–1989); Lubbock Cruise for the Disabled (1987)</li>
+  </ul>
+
+  <h2>Student Organizations (Advising)</h2>
+  <ul class="compact">
+    <li>Faculty Advisor — Delta Chi Fraternity (2009–2017)</li>
+    <li>Founding Faculty Advisor — Society of STEM Education (2015–2020)</li>
+    <li>Founding Faculty Advisor — Tech Lions Club (2013–2020)</li>
+    <li>Founding Faculty Advisor — Texas Tech University Student Chapter, Engineers Without Borders (2008–present; Panama fieldwork 2009 and 2014)</li>
+    <li>Founding Faculty Advisor — Society of Environmental Professionals (1998–present)</li>
+    <li>ASAE Student Branch Advisor (1989–1993)</li>
+  </ul>
+</main>
+
+<footer class="site-footer">
+  <div class="container">© <span id="year"></span> Clifford B. Fedler</div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();
+
+  (function () {
+    var LINK_ID = 'theme-style';
+    var LS_KEY  = 'theme';
+    var linkEl  = document.getElementById(LINK_ID);
+    var toggle  = document.getElementById('theme-toggle');
+
+    // 1) default to light; 2) apply saved preference if any
+    var saved = localStorage.getItem(LS_KEY);
+    if (saved === 'dark') {
+      linkEl.href = 'dark_mode.css';
+      if (toggle) { toggle.textContent = '☀️ Light'; toggle.setAttribute('aria-pressed', 'true'); }
+    } else {
+      linkEl.href = 'light_mode.css';
+      if (toggle) { toggle.textContent = '🌙 Dark'; toggle.setAttribute('aria-pressed', 'false'); }
+    }
+
+    // toggle handler
+    function swapTheme(e){
+      if (e) e.preventDefault();
+      var isDark = linkEl.href.indexOf('dark_mode.css') !== -1;
+      if (isDark) {
+        linkEl.href = 'light_mode.css';
+        localStorage.setItem(LS_KEY, 'light');
+        if (toggle) { toggle.textContent = '🌙 Dark'; toggle.setAttribute('aria-pressed', 'false'); }
+      } else {
+        linkEl.href = 'dark_mode.css';
+        localStorage.setItem(LS_KEY, 'dark');
+        if (toggle) { toggle.textContent = '☀️ Light'; toggle.setAttribute('aria-pressed', 'true'); }
+      }
+    }
+
+    if (toggle) toggle.addEventListener('click', swapTheme);
+  })();
+
+</script>
+</body>
+</html>
