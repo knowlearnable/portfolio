@@ -88,7 +88,8 @@ a:focus{outline:2px solid var(--brand-2);outline-offset:3px;border-radius:6px}
 
 /* Header (glassy) */
 .site-header{
-  position:sticky; top:0; z-index:1000;
+  position:static; /* was sticky — turn off */
+  z-index:auto;
   backdrop-filter: saturate(140%) blur(8px);
   background: linear-gradient(to right, rgba(255,255,255,.75), rgba(255,255,255,.75));
   border-bottom:1px solid var(--line);
@@ -116,7 +117,7 @@ a:focus{outline:2px solid var(--brand-2);outline-offset:3px;border-radius:6px}
 
 /* Navbar — pill tabs with subtle gradient */
 .navbar{
-  position:sticky; top:68px; z-index:999;
+  position:sticky; top:0; z-index:1000;
   backdrop-filter: saturate(150%) blur(8px);
   background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.6));
   border-top:1px solid var(--line);border-bottom:1px solid var(--line)
@@ -153,7 +154,7 @@ aside{position:sticky; top:132px; height:fit-content}
 aside .badge{margin-top:8px}
 
 /* Headings with anchors */
-h2,h3{scroll-margin-top:120px}
+h2,h3{scroll-margin-top:72px}
 h2{
   font-family:var(--font-ui);
   margin:26px 0 12px;
